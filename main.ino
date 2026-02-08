@@ -12,6 +12,7 @@ void setup() {
 
   // Nastavenie pinov D4 (SDA) a D5 (SCL)
   Wire.begin(D4, D5);
+  // Wire.begin(D9, D10); // Zmenené piny pre senzor v2
 
   if (! sht4.begin()) {
     Serial.println("CHYBA: Senzor neodpovedá. Skontrolujte káble.");
@@ -57,6 +58,7 @@ void setup() {
   float heatHum = humidity.relative_humidity;
 
   Serial.print("   Teplota PO ohreve: "); Serial.print(heatTemp); Serial.println(" °C");
+  Serial.print("   Vlhkosť po ohreve: "); Serial.print(heatHum); Serial.println(" %");
   
   // --- VYHODNOTENIE ---
   Serial.println("\n--- VÝSLEDOK TESTU ---");
